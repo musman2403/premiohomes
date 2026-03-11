@@ -1,0 +1,443 @@
+.apartments {
+    padding: 80px 0;
+    background: var(--color-bg);
+}
+
+.apartments .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.apartments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.apartment-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* Slide-in directions */
+.apartment-card.slide-left {
+    transform: translateX(-100px);
+}
+
+.apartment-card.slide-up {
+    transform: translateY(80px);
+}
+
+.apartment-card.slide-right {
+    transform: translateX(100px);
+}
+
+/* Visible state after animation */
+.apartment-card.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+.apartment-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+}
+
+.apartment-card-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.apartment-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.apartment-card:hover .apartment-card-img img {
+    transform: scale(1.05);
+}
+
+.apartment-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    transition: all 0.25s ease;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.favorite-btn:hover {
+    transform: scale(1.15);
+    background: #fff;
+    color: #e74c3c;
+}
+
+.favorite-btn.active {
+    color: #e74c3c;
+    background: #fff;
+}
+
+.favorite-btn.active:hover {
+    transform: scale(1.15);
+}
+
+.apartment-card-body {
+    padding: 24px;
+}
+
+.apartment-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 14px;
+}
+
+.apartment-card-meta {
+    display: flex;
+    gap: 20px;
+}
+
+.apartment-card-meta span {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.apartment-card-meta span svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    .apartments-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ── Apartment Detail Modal ── */
+.apt-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.apt-modal {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apt-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.apt-modal-close:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.apt-modal-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.apt-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.apt-modal-price {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.apt-modal-content {
+    padding: 28px 28px 24px;
+}
+
+.apt-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.apt-modal-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark, #222);
+    margin: 0;
+}
+
+.apt-modal-avail {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #666;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.apt-modal-avail.now {
+    background: #e6f9f0;
+    color: #1a8a5c;
+}
+
+.apt-modal-stats {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.apt-modal-stat {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 12px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.apt-modal-stat:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.apt-modal-stat svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary, #2e7d6f);
+    flex-shrink: 0;
+}
+
+.apt-modal-stat strong {
+    color: var(--color-dark, #222);
+    margin-right: 2px;
+}
+
+.apt-modal-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.apt-modal-features h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--color-dark, #222);
+    margin-bottom: 12px;
+}
+
+.apt-modal-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.apt-modal-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.apt-modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.apt-modal-btn {
+    flex: 1;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+}
+
+.apt-modal-btn.primary {
+    background: var(--color-primary, #2e7d6f);
+    color: #fff;
+}
+
+.apt-modal-btn.primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.apt-modal-btn.secondary {
+    background: #f5f5f5;
+    color: #444;
+    border: 1px solid #e0e0e0;
+}
+
+.apt-modal-btn.secondary:hover {
+    background: #eee;
+}
+
+.apt-modal-btn.secondary.favorited {
+    color: #e74c3c;
+    border-color: #fdd;
+    background: #fff5f5;
+}
+
+/* Mobile modal adjustments */
+@media (max-width: 600px) {
+    .apt-modal-overlay {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .apt-modal {
+        max-height: 92vh;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .apt-modal-image {
+        height: 200px;
+    }
+
+    .apt-modal-content {
+        padding: 20px;
+    }
+
+    .apt-modal-title {
+        font-size: 1.25rem;
+    }
+
+    .apt-modal-features ul {
+        grid-template-columns: 1fr;
+    }
+
+    .apt-modal-actions {
+        flex-direction: column;
+    }
+}

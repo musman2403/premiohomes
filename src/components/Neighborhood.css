@@ -1,0 +1,62 @@
+.neighborhood {
+    padding: 90px 0;
+    background: var(--color-bg);
+}
+
+.neighborhood-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.neighborhood-text h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.neighborhood-text p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+.neighborhood-image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
+}
+
+.neighborhood-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.neighborhood-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.neighborhood-image:hover img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .neighborhood-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .neighborhood-text h2 {
+        font-size: 1.6rem;
+    }
+}
