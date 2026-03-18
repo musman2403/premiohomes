@@ -37,7 +37,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="about-image slide-right">
-                        <img src={natureImg} alt="Nature surrounding The Nook apartments" width="600" height="400" />
+                        <img src={natureImg} alt="Nature surrounding The Nook apartments" width="600" height="400" loading="lazy" decoding="async" />
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="about-image slide-left">
-                        <img src={heroImg} alt="Contemporary apartment interior" width="600" height="400" />
+                        <img src={heroImg} alt="Contemporary apartment interior" width="600" height="400" loading="lazy" decoding="async" />
                     </div>
                 </div>
             </div>

@@ -34,7 +34,7 @@ export default function Agents() {
                     {agents.map((agent) => (
                         <div className="agent-card" key={agent.name}>
                             <div className="agent-avatar">
-                                <img src={agent.img} alt={agent.name} width="300" height="350" />
+                                <img src={agent.img} alt={agent.name} width="300" height="350" loading="lazy" decoding="async" />
                             </div>
                             <h3 className="agent-name">{agent.name}</h3>
                             <p className="agent-role">{agent.role}</p>

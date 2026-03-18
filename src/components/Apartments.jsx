@@ -41,7 +41,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
                     {apartments.map((apt) => (
                         <div className={`apartment-card ${apt.slide}`} key={apt.id} onClick={() => setSelectedApt(apt)}>
                             <div className="apartment-card-img">
-                                <img src={apt.img} alt={apt.title} width="600" height="400" />
+                                <img src={apt.img} alt={apt.title} width="600" height="400" loading="lazy" decoding="async" />
                                 <span className="apartment-badge">For Sale</span>
                                 <button
                                     className={`favorite-btn ${isFavorite(apt.title) ? 'active' : ''}`}

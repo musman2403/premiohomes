@@ -19,17 +19,19 @@ export default function App() {
   return (
     <>
       <Header favorites={favorites} />
-      <Hero />
-      <FloorPlans />
-      <Stats />
-      <About />
-      <AboutUs />
-      <Amenities />
-      <Apartments isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
-      <Gallery />
-      <Neighborhood />
-      <Agents />
-      <ScheduleTour />
+      <main id="main-content">
+        <Hero />
+        <FloorPlans />
+        <Stats />
+        <About />
+        <AboutUs />
+        <Amenities />
+        <Apartments isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
+        <Gallery />
+        <Neighborhood />
+        <Agents />
+        <ScheduleTour />
+      </main>
       <Footer />
     </>
   );

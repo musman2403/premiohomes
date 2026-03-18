@@ -33,7 +33,7 @@ export default function Neighborhood() {
                         </p>
                     </div>
                     <div className="neighborhood-image" ref={imgRef}>
-                        <img src={familyImg} alt="Family enjoying the peaceful neighborhood" width="600" height="400" />
+                        <img src={familyImg} alt="Family enjoying the peaceful neighborhood" width="600" height="400" loading="lazy" decoding="async" />
                     </div>
                 </div>
             </div>

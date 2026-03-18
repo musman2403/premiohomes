@@ -53,7 +53,7 @@ export default function AboutUs() {
         <section className="about-us" id="about-us" ref={sectionRef}>
             {/* ── Hero banner ── */}
             <div className="au-banner">
-                <img src={natureImg} alt="Premio Homes community" className="au-banner-img" width="1200" height="600" />
+                <img src={natureImg} alt="Premio Homes community" className="au-banner-img" width="1200" height="600" loading="lazy" decoding="async" />
                 <div className="au-banner-overlay" />
                 <div className="au-banner-text au-animate">
                     <span className="au-eyebrow">About Premio Homes</span>
@@ -79,7 +79,7 @@ export default function AboutUs() {
             {/* ── Story section ── */}
             <div className="au-story">
                 <div className="au-story-img au-animate">
-                    <img src={familyImg} alt="Families at Premio Homes" width="600" height="400" />
+                    <img src={familyImg} alt="Families at Premio Homes" width="600" height="400" loading="lazy" decoding="async" />
                 </div>
                 <div className="au-story-text au-animate">
                     <span className="au-eyebrow">Our Story</span>

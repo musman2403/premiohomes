@@ -27,9 +27,11 @@ const plans = [
 export default function FloorPlans() {
     return (
         <section className="floorplans" id="floorplans">
-            <div className="floorplans-grid">
-                {plans.map((plan) => (
-                    <div className="floorplan-card" key={plan.title}>
+            <div className="container">
+                <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px' }}>Floor Plans</h2>
+                <div className="floorplans-grid">
+                    {plans.map((plan) => (
+                        <div className="floorplan-card" key={plan.title}>
                         <div className="floorplan-card-bg" style={{ backgroundImage: `url(${plan.img})` }}></div>
                         <div className="floorplan-card-content">
                             <div className="floorplan-card-content-inner">
@@ -40,6 +42,7 @@ export default function FloorPlans() {
                         </div>
                     </div>
                 ))}
+                </div>
             </div>
         </section>
     );

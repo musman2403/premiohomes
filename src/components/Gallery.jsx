@@ -45,7 +45,7 @@ export default function Gallery() {
                 <div className="gallery-grid" ref={gridRef}>
                     {images.map((img, i) => (
                         <div className="gallery-item" key={i}>
-                            <img src={img.src} alt={img.alt} width="800" height="600" />
+                            <img src={img.src} alt={img.alt} width="800" height="600" loading="lazy" decoding="async" />
                             <div className="gallery-overlay">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <circle cx="11" cy="11" r="8" />
