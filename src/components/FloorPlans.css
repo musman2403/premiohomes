@@ -1,25 +1,30 @@
-.floorplans {
-    background: #111;
+.floorplans-full {
+    background: #000;
     padding: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .floorplans-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     gap: 0;
+    margin: 0;
 }
 
 .floorplan-card {
     position: relative;
-    min-height: 90vh;
+    min-height: 100vh;
     overflow: hidden;
     cursor: pointer;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Thin elegant separator lines between cards */
-.floorplan-card + .floorplan-card {
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
+.floorplan-card:first-child {
+    border-left: none;
 }
 
 .floorplan-card-bg {
@@ -27,140 +32,84 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: brightness(0.55) saturate(0.9);
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                filter 1s ease;
+    filter: brightness(0.6);
 }
 
 .floorplan-card:hover .floorplan-card-bg {
-    filter: brightness(0.7) saturate(1.1);
-    transform: scale(1.05);
+    filter: brightness(0.75);
+    transform: scale(1.08);
 }
 
-/* Elegant cinematic gradient overlay */
 .floorplan-card::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.45) 35%,
-        rgba(0, 0, 0, 0.1) 60%,
-        rgba(0, 0, 0, 0.02) 100%
-    );
-    z-index: 1;
-    transition: background 0.6s ease;
-}
-
-.floorplan-card:hover::after {
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.3) 35%,
-        rgba(0, 0, 0, 0.05) 60%,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
         transparent 100%
     );
-}
-
-/* Subtle top accent line on hover */
-.floorplan-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--color-primary-light, #3b7d77), transparent);
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.floorplan-card:hover::before {
-    opacity: 1;
+    z-index: 1;
 }
 
 .floorplan-card-content {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     z-index: 2;
     color: #fff;
-    padding: 50px 36px;
-    display: flex;
-    justify-content: center;
-    transform: translateY(8px);
-    opacity: 0.92;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.6s ease;
+    padding: 60px 40px;
+    opacity: 0.95;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .floorplan-card:hover .floorplan-card-content {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(-10px);
 }
 
 .floorplan-card-content-inner {
-    text-align: left;
-    max-width: 300px;
-    width: 100%;
+    max-width: 320px;
 }
 
 .floorplan-card-title {
     font-family: 'Jost', var(--font-sans);
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.25;
-    letter-spacing: 0.02em;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
 }
 
 .floorplan-card-desc {
     font-family: 'Inter', var(--font-sans);
     font-size: 15px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.78);
-    line-height: 26px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 24px;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .floorplan-card-price {
     font-family: 'Inter', var(--font-sans);
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-primary-light, #3b7d77);
     display: inline-block;
-    padding-bottom: 6px;
-    border-bottom: 2px solid var(--color-primary-light, #3b7d77);
-    transition: letter-spacing 0.4s ease, color 0.4s ease;
 }
 
-.floorplan-card:hover .floorplan-card-price {
-    letter-spacing: 2.5px;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .floorplans-grid {
         grid-template-columns: 1fr;
     }
 
     .floorplan-card {
-        min-height: 400px;
-    }
-
-    .floorplan-card + .floorplan-card {
+        min-height: 450px;
+        border-right: none;
         border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .floorplan-card-content {
-        transform: translateY(0);
-        opacity: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
