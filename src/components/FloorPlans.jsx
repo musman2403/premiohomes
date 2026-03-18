@@ -1,6 +1,6 @@
-import studioImg from '../assets/images/studio.png';
-import twoBedImg from '../assets/images/two-bed.png';
-import threeBedImg from '../assets/images/three-bed.png';
+import studioImg from '../assets/images/studio.webp';
+import twoBedImg from '../assets/images/two-bed.webp';
+import threeBedImg from '../assets/images/three-bed.webp';
 import './FloorPlans.css';
 
 const plans = [

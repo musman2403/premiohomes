@@ -41,7 +41,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
                     {apartments.map((apt) => (
                         <div className={`apartment-card ${apt.slide}`} key={apt.id} onClick={() => setSelectedApt(apt)}>
                             <div className="apartment-card-img">
-                                <img src={apt.img} alt={apt.title} />
+                                <img src={apt.img} alt={apt.title} width="600" height="400" />
                                 <span className="apartment-badge">For Sale</span>
                                 <button
                                     className={`favorite-btn ${isFavorite(apt.title) ? 'active' : ''}`}
@@ -89,7 +89,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
                             </svg>
                         </button>
                         <div className="apt-modal-image">
-                            <img src={selectedApt.img} alt={selectedApt.title} />
+                            <img src={selectedApt.img} alt={selectedApt.title} width="800" height="500" />
                             <span className="apartment-badge">For Sale</span>
                             <span className="apt-modal-price">{selectedApt.price}</span>
                         </div>

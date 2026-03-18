@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import natureImg from '../assets/images/nature.png';
-import heroImg from '../assets/images/hero.png';
+import natureImg from '../assets/images/nature.webp';
+import heroImg from '../assets/images/hero.webp';
 import './About.css';
 
 export default function About() {
@@ -37,7 +37,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="about-image slide-right">
-                        <img src={natureImg} alt="Nature surrounding The Nook apartments" />
+                        <img src={natureImg} alt="Nature surrounding The Nook apartments" width="600" height="400" />
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="about-image slide-left">
-                        <img src={heroImg} alt="Contemporary apartment interior" />
+                        <img src={heroImg} alt="Contemporary apartment interior" width="600" height="400" />
                     </div>
                 </div>
             </div>

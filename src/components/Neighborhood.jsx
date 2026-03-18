@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import familyImg from '../assets/images/family.png';
+import familyImg from '../assets/images/family.webp';
 import './Neighborhood.css';
 
 export default function Neighborhood() {
@@ -33,7 +33,7 @@ export default function Neighborhood() {
                         </p>
                     </div>
                     <div className="neighborhood-image" ref={imgRef}>
-                        <img src={familyImg} alt="Family enjoying the peaceful neighborhood" />
+                        <img src={familyImg} alt="Family enjoying the peaceful neighborhood" width="600" height="400" />
                     </div>
                 </div>
             </div>

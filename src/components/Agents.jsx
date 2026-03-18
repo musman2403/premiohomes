@@ -1,6 +1,6 @@
-import agent1 from '../assets/images/agent1.png';
-import agent2 from '../assets/images/agent2.png';
-import agent3 from '../assets/images/agent3.png';
+import agent1 from '../assets/images/agent1.webp';
+import agent2 from '../assets/images/agent2.webp';
+import agent3 from '../assets/images/agent3.webp';
 import './Agents.css';
 
 const agents = [
@@ -34,7 +34,7 @@ export default function Agents() {
                     {agents.map((agent) => (
                         <div className="agent-card" key={agent.name}>
                             <div className="agent-avatar">
-                                <img src={agent.img} alt={agent.name} />
+                                <img src={agent.img} alt={agent.name} width="300" height="350" />
                             </div>
                             <h3 className="agent-name">{agent.name}</h3>
                             <p className="agent-role">{agent.role}</p>

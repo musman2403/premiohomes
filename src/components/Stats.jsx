@@ -9,21 +9,29 @@ const statsData = [
 
 function useCountUp(end, duration = 2000, trigger = false) {
     const [count, setCount] = useState(0);
+
     useEffect(() => {
         if (!trigger) return;
-        let start = 0;
-        const increment = end / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= end) {
-                setCount(end);
-                clearInterval(timer);
-            } else {
-                setCount(Math.floor(start));
+
+        let startTime = null;
+        let animationFrameId;
+
+        const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / duration, 1);
+            
+            setCount(Math.floor(percentage * end));
+
+            if (percentage < 1) {
+                animationFrameId = requestAnimationFrame(animate);
             }
-        }, 16);
-        return () => clearInterval(timer);
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrameId);
     }, [end, duration, trigger]);
+
     return count;
 }
 

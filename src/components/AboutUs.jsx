@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import familyImg from '../assets/images/family.png';
-import natureImg from '../assets/images/nature.png';
+import familyImg from '../assets/images/family.webp';
+import natureImg from '../assets/images/nature.webp';
 import './AboutUs.css';
 
 const stats = [
@@ -53,7 +53,7 @@ export default function AboutUs() {
         <section className="about-us" id="about-us" ref={sectionRef}>
             {/* ── Hero banner ── */}
             <div className="au-banner">
-                <img src={natureImg} alt="Premio Homes community" className="au-banner-img" />
+                <img src={natureImg} alt="Premio Homes community" className="au-banner-img" width="1200" height="600" />
                 <div className="au-banner-overlay" />
                 <div className="au-banner-text au-animate">
                     <span className="au-eyebrow">About Premio Homes</span>
@@ -79,7 +79,7 @@ export default function AboutUs() {
             {/* ── Story section ── */}
             <div className="au-story">
                 <div className="au-story-img au-animate">
-                    <img src={familyImg} alt="Families at Premio Homes" />
+                    <img src={familyImg} alt="Families at Premio Homes" width="600" height="400" />
                 </div>
                 <div className="au-story-text au-animate">
                     <span className="au-eyebrow">Our Story</span>

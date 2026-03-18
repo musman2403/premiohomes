@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logoImg from '../assets/images/logo.png';
+import logoImg from '../assets/images/logo.webp';
 import apartments from '../data/apartments';
 import './Header.css';
 
@@ -20,7 +20,7 @@ export default function Header({ favorites = [] }) {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`} id="header">
       <div className="header-logo">
-        <img src={logoImg} alt="Premio Homes" className="logo-img" />
+        <img src={logoImg} alt="Premio Homes" className="logo-img" width="120" height="40" />
       </div>
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
         <a href="#home" className="active" onClick={closeMenu}>Home</a>

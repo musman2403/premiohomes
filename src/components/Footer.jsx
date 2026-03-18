@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logoImg from '../assets/images/logo.png';
+import logoImg from '../assets/images/logo.webp';
 import './Footer.css';
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
         <>
             <footer className="footer">
                 <div className="container footer-content">
-                    <img src={logoImg} alt="Premio Homes" className="footer-logo" />
+                    <img src={logoImg} alt="Premio Homes" className="footer-logo" width="100" height="33" />
                     <p className="footer-text">&copy; {new Date().getFullYear()} Premio Homes — All rights reserved.</p>
                 </div>
             </footer>

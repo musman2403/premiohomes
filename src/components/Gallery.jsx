@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
-import heroImg from '../assets/images/hero.png';
-import studioImg from '../assets/images/studio.png';
-import twoBedImg from '../assets/images/two-bed.png';
-import threeBedImg from '../assets/images/three-bed.png';
-import kitchenImg from '../assets/images/kitchen.png';
-import bedroomImg from '../assets/images/bedroom.png';
-import bathroomImg from '../assets/images/bathroom.png';
+import heroImg from '../assets/images/hero.webp';
+import studioImg from '../assets/images/studio.webp';
+import twoBedImg from '../assets/images/two-bed.webp';
+import threeBedImg from '../assets/images/three-bed.webp';
+import kitchenImg from '../assets/images/kitchen.webp';
+import bedroomImg from '../assets/images/bedroom.webp';
+import bathroomImg from '../assets/images/bathroom.webp';
 import './Gallery.css';
 
 const images = [
@@ -45,7 +45,7 @@ export default function Gallery() {
                 <div className="gallery-grid" ref={gridRef}>
                     {images.map((img, i) => (
                         <div className="gallery-item" key={i}>
-                            <img src={img.src} alt={img.alt} />
+                            <img src={img.src} alt={img.alt} width="800" height="600" />
                             <div className="gallery-overlay">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <circle cx="11" cy="11" r="8" />
