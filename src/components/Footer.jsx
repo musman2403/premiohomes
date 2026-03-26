@@ -17,7 +17,16 @@ export default function Footer() {
         <>
             <footer className="footer">
                 <div className="container footer-content">
-                    <img src={logoImg} alt="Premio Homes" className="footer-logo" width="100" height="33" />
+                    <div className="footer-brand">
+                        <img src={logoImg} alt="Premio Homes" className="footer-logo" width="100" height="33" />
+                        <p className="footer-tagline">Building Excellence in Every Detail</p>
+                    </div>
+                    <div className="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p>Plaza No.209- D Block, Phase 3, New Lahore City, Lahore</p>
+                        <p><a href="tel:923225558812">+92 322 5558812</a></p>
+                        <p><a href="mailto:info@premiohomes.com">info@premiohomes.com</a></p>
+                    </div>
                     <p className="footer-text">&copy; {new Date().getFullYear()} Premio Homes — All rights reserved.</p>
                 </div>
             </footer>
