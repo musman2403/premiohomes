@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import './Stats.css';
 
 const statsData = [
-    { end: 90, suffix: '', label: 'Modern units spread over three floors' },
-    { end: 70, suffix: 'K', label: 'Square feet of nature around the block' },
-    { end: 90, suffix: '+', label: 'Parking spaces for residents and guests' },
+    { end: 10, suffix: '+', label: 'Years of Experience in Real Estate' },
+    { end: 100, suffix: '%', label: 'Commitment to Transparency' },
+    { end: 100, suffix: '%', label: 'Focus on Client Satisfaction' },
 ];
 
 function useCountUp(end, duration = 2000, trigger = false) {

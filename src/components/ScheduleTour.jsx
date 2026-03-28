@@ -7,11 +7,11 @@ export default function ScheduleTour() {
                 <div className="contact-wrapper">
                     {/* Left: Info */}
                     <div className="contact-info">
-                        <h2>Schedule a Tour at The Nook</h2>
+                        <h2>Connect with Primeo Homes</h2>
                         <p className="contact-info-desc">
-                            The Nook is a home buyers dream. It&apos;s a condo in the nature,
-                            with beautiful views, lots of trees and plants, and a few big
-                            rocks here and there.
+                            We believe in building homes with transparency — not just making promises. 
+                            Get in touch to learn more about our development projects and professional 
+                            real estate services in Lahore.
                         </p>
                         <div className="contact-detail">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

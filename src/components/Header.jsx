@@ -24,9 +24,9 @@ export default function Header({ favorites = [] }) {
       </div>
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
         <a href="#home" className="active" onClick={closeMenu}>Home</a>
-        <a href="#about" onClick={closeMenu}>The Nook</a>
+        <a href="#about-us" onClick={closeMenu}>About Us</a>
         <a href="#gallery" onClick={closeMenu}>Gallery</a>
-        <a href="#contact" onClick={closeMenu}>Lease Now</a>
+        <a href="#contact" onClick={closeMenu}>Contact Us</a>
       </nav>
       <div className="header-actions">
         <div className="profile-wrapper">

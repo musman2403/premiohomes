@@ -36,7 +36,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
     return (
         <section className="apartments section">
             <div className="container">
-                <h2 className="section-title">The Nook Apartments</h2>
+                <h2 className="section-title">Featured Projects</h2>
                 <div className="apartments-grid" ref={gridRef}>
                     {apartments.map((apt) => (
                         <div className={`apartment-card ${apt.slide}`} key={apt.id} onClick={() => setSelectedApt(apt)}>

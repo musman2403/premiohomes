@@ -24,12 +24,12 @@ export default function Neighborhood() {
             <div className="container">
                 <div className="neighborhood-grid">
                     <div className="neighborhood-text">
-                        <h2>Located in the peacefulness of Asheville, NC</h2>
+                        <h2>Located in the Heart of Lahore</h2>
                         <p>
-                            The Nook is a condo in Asheville, NC. The land around it was left untouched,
-                            and the surrounding apartments are built from sustainable materials. Enjoy
-                            the tranquility of nature while being minutes away from downtown dining,
-                            arts, and entertainment.
+                            Primeo Homes is strategically located in prime areas across Lahore, offering 
+                            the perfect blend of modern living and urban convenience. Our developments 
+                            focus on careful land selection and proximity to key amenities, ensuring 
+                            long-term value and comfort for every client.
                         </p>
                     </div>
                     <div className="neighborhood-image" ref={imgRef}>

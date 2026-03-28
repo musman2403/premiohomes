@@ -6,20 +6,20 @@ import './FloorPlans.css';
 const plans = [
     {
         title: 'Studio, One Bedroom',
-        desc: 'The Nook is a condo in the nature. The views, plants and rocks make it a dream for any homebuyer.',
-        price: '$190,000',
+        desc: 'Carefully planned living spaces in prime locations, designed for modern comfort and efficiency.',
+        price: 'Contact for Pricing',
         img: studioImg,
     },
     {
         title: 'Two Bedrooms',
-        desc: 'The Nook is a great place to buy a home. It has beautiful views, lots of trees and plants, and big rocks here and there.',
-        price: '$290,000',
+        desc: 'Spacious family homes built with quality construction and a focus on long-term value.',
+        price: 'Contact for Pricing',
         img: twoBedImg,
     },
     {
         title: 'Three Bedrooms',
-        desc: "It's a condo in the forest, with beautiful views, lots of trees and vegetation, and a few big rocks here and there.",
-        price: '$390,000',
+        desc: 'Premium residences offering ample space and professional planning for a superior living experience.',
+        price: 'Contact for Pricing',
         img: threeBedImg,
     },
 ];

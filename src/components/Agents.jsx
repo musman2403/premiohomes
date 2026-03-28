@@ -19,7 +19,7 @@ const agents = [
     {
         name: 'David Thompson',
         role: 'Property Expert',
-        bio: 'David\'s deep knowledge of the Asheville market makes him the go-to advisor for finding the perfect property investment.',
+        bio: 'David\'s deep knowledge of the Lahore real estate market makes him the go-to advisor for finding the perfect property investment.',
         img: agent3,
     },
 ];

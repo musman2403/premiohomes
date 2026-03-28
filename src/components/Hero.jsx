@@ -17,10 +17,10 @@ export default function Hero() {
             </div>
             <div className="hero-overlay"></div>
             <div className="hero-content">
-                <h1 className="hero-title">The Nook</h1>
+                <h1 className="hero-title">Primeo Homes</h1>
                 <p className="hero-subtitle">
-                    The Nook is a home buyers dream. It&apos;s a condo in the nature, with beautiful views,
-                    lots of trees and plants, and a few big rocks here and there.
+                    Building real homes with clarity, commitment, and trust. 
+                    Based in Lahore, we deliver quality development and transparent real estate solutions.
                 </p>
                 <a href="#contact" className="btn-primary">Schedule a Tour</a>
             </div>

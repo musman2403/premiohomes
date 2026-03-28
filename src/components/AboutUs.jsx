@@ -4,27 +4,27 @@ import natureImg from '../assets/images/nature.webp';
 import './AboutUs.css';
 
 const stats = [
-    { value: '15+', label: 'Years of Experience' },
-    { value: '500+', label: 'Happy Residents' },
-    { value: '12', label: 'Award-Winning Properties' },
-    { value: '98%', label: 'Resident Satisfaction' },
+    { value: '10+', label: 'Years of Experience' },
+    { value: 'Active', label: 'Development Phase' },
+    { value: '100%', label: 'Transparency' },
+    { value: 'Lahore', label: 'Primary Focus' },
 ];
 
 const values = [
     {
-        icon: '🌿',
-        title: 'Sustainability',
-        desc: 'Every building we design respects the land it stands on. We use eco-friendly materials and energy-efficient systems as standard.',
+        icon: '📍',
+        title: 'Careful Selection',
+        desc: 'Structured and transparent approach beginning with careful land selection in prime locations for maximum value.',
     },
     {
-        icon: '🏛️',
-        title: 'Craftsmanship',
-        desc: 'From foundation to finishing, we hold every detail to the highest standard — beautifully built spaces that stand the test of time.',
+        icon: '📐',
+        title: 'Professional Planning',
+        desc: 'Thorough, professional planning and design ensuring a smooth, step-by-step development execution process.',
     },
     {
-        icon: '🤝',
-        title: 'Community',
-        desc: 'We don\'t just build residences — we cultivate communities where neighbors become friends and spaces become homes.',
+        icon: '🏗️',
+        title: 'Quality Construction',
+        desc: 'An unwavering focus on quality construction. We believe in building real homes with clarity, commitment, and trust.',
     },
 ];
 
@@ -56,12 +56,12 @@ export default function AboutUs() {
                 <img src={natureImg} alt="Premio Homes community" className="au-banner-img" width="1200" height="600" loading="lazy" decoding="async" />
                 <div className="au-banner-overlay" />
                 <div className="au-banner-text au-animate">
-                    <span className="au-eyebrow">About Premio Homes</span>
-                    <h2>Built on passion.<br />Rooted in nature.</h2>
+                    <span className="au-eyebrow">Trust Statement</span>
+                    <h2>Building homes with<br />transparency.</h2>
                     <p>
-                        For over a decade, Premio Homes has been crafting residences that bring
-                        people closer to the world around them — without sacrificing a single
-                        comfort of modern life.
+                        We believe in building homes with transparency — not just making promises.
+                        Primeo Homes is committed to delivering quality, honesty, and long-term
+                        value to every client.
                     </p>
                 </div>
             </div>
@@ -82,22 +82,20 @@ export default function AboutUs() {
                     <img src={familyImg} alt="Families at Premio Homes" width="600" height="400" loading="lazy" decoding="async" />
                 </div>
                 <div className="au-story-text au-animate">
-                    <span className="au-eyebrow">Our Story</span>
-                    <h3>Where luxury meets the landscape</h3>
+                    <span className="au-eyebrow">Our Experience</span>
+                    <h3>A decade of real estate expertise</h3>
                     <p>
-                        Premio Homes was founded in 2009 with a single conviction: that great
-                        architecture should never come at the expense of the environment. Starting
-                        with a handful of properties in the Appalachian foothills, we have grown
-                        into one of the most respected residential developers in the Southeast.
+                        Primeo Homes is backed by a team with over 10 years of experience in real
+                        estate dealing, property management, and development planning. Our team
+                        has been actively involved in multiple real estate activities across Lahore.
                     </p>
                     <p>
-                        Each of our communities is master-planned to integrate with its natural
-                        surroundings — preserving green corridors, native plantings, and open
-                        spaces that residents can enjoy year-round. The result is a collection of
-                        homes that feel as alive as the landscapes they inhabit.
+                        We are currently in the development phase, with planning, groundwork, and
+                        project setup actively in progress. Our industry exposure enables us to better
+                        understand market dynamics and share regular updates with our clients.
                     </p>
                     <a href="#about" className="au-link">
-                        Explore our residences
+                        Status: Development in Progress
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -106,8 +104,8 @@ export default function AboutUs() {
             {/* ── Values ── */}
             <div className="au-values">
                 <div className="au-values-header au-animate">
-                    <span className="au-eyebrow">What We Stand For</span>
-                    <h3>Our core values</h3>
+                    <span className="au-eyebrow">Our Development Approach</span>
+                    <h3>Structured & Transparent</h3>
                 </div>
                 <div className="au-values-grid">
                     {values.map((v) => (
