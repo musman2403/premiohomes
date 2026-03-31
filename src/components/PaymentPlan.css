@@ -1,0 +1,214 @@
+/* ===== Payment Plan Section ===== */
+.payment-plan {
+    background: var(--color-bg-light);
+    padding: 100px 0;
+    position: relative;
+}
+
+.pp-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 650px;
+    margin-inline: auto;
+}
+
+.pp-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.pp-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.pp-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    flex: 1;
+    max-width: 380px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pp-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pp-card-highlight {
+    background: var(--color-dark);
+    color: #fff;
+    border-color: var(--color-dark);
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+.pp-card-highlight:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pp-card-badge {
+    position: absolute;
+    top: -16px;
+    right: 24px;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Jost', var(--font-sans);
+    font-size: 1.25rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(55, 115, 110, 0.4);
+}
+
+.pp-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: inherit;
+}
+
+.pp-card-highlight .pp-card-title {
+    color: #fff;
+}
+
+.pp-card-amount {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.pp-card-highlight .pp-card-amount {
+    color: var(--color-primary-light);
+}
+
+.pp-card-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    min-height: 70px;
+}
+
+.pp-card-highlight .pp-card-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.pp-card-features {
+    border-top: 1px solid var(--color-border);
+    padding-top: 24px;
+}
+
+.pp-card-highlight .pp-card-features {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.pp-card-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.pp-card-highlight .pp-card-features li {
+    color: #fff;
+}
+
+.pp-card-features svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+}
+
+.pp-card-highlight .pp-card-features svg {
+    color: var(--color-primary-light);
+}
+
+.pp-footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pp-footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+}
+
+/* ── Animation base ── */
+.pp-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pp-animate.pp-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pp-card-highlight.pp-animate {
+    transform: scale(1.05) translateY(30px);
+}
+
+.pp-card-highlight.pp-animate.pp-visible {
+    transform: scale(1.05) translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .pp-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .pp-card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .pp-card-highlight {
+        transform: none;
+    }
+
+    .pp-card-highlight:hover {
+        transform: translateY(-8px);
+    }
+    
+    .pp-card-highlight.pp-animate {
+        transform: translateY(30px);
+    }
+
+    .pp-card-highlight.pp-animate.pp-visible {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-plan {
+        padding: 70px 0;
+    }
+    
+    .pp-card {
+        padding: 32px 24px;
+    }
+}
