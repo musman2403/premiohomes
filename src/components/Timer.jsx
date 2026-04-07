@@ -49,7 +49,7 @@ const Timer = () => {
     color: '#ffffff',
     fontFamily: '"Inter", "Roboto", "Segoe UI", sans-serif',
     margin: 0,
-    padding: 0,
+    padding: '1rem',
     boxSizing: 'border-box',
     position: 'absolute',
     top: 0,
@@ -58,25 +58,27 @@ const Timer = () => {
   };
 
   const brandStyle = {
-    fontSize: '4rem',
+    fontSize: 'clamp(1.5rem, 8vw, 4rem)',
     marginBottom: '0.5rem',
     fontWeight: '800',
     letterSpacing: '3px',
     color: '#d4af37',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    textAlign: 'center'
   };
 
   const titleStyle = {
-    fontSize: '1.5rem',
-    marginBottom: '3rem',
+    fontSize: 'clamp(1rem, 4vw, 1.5rem)',
+    marginBottom: 'clamp(1.5rem, 5vw, 3rem)',
     fontWeight: '400',
-    letterSpacing: '5px',
-    color: '#aaa'
+    letterSpacing: 'clamp(2px, 1vw, 5px)',
+    color: '#aaa',
+    textAlign: 'center'
   };
 
   const countdownStyle = {
     display: 'flex',
-    gap: '1.5rem',
+    gap: 'clamp(0.5rem, 3vw, 1.5rem)',
     flexWrap: 'wrap',
     justifyContent: 'center'
   };
@@ -86,21 +88,21 @@ const Timer = () => {
     flexDirection: 'column',
     alignItems: 'center',
     background: '#1a1a1a',
-    padding: '1.5rem',
+    padding: 'clamp(0.75rem, 3vw, 1.5rem)',
     borderRadius: '12px',
-    minWidth: '100px',
+    minWidth: 'clamp(70px, 20vw, 100px)',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
     border: '1px solid #333'
   };
 
   const numberStyle = {
-    fontSize: '3rem',
+    fontSize: 'clamp(2rem, 6vw, 3rem)',
     fontWeight: 'bold',
     color: '#d4af37' // gold color used in luxury real estate often
   };
 
   const labelStyle = {
-    fontSize: '0.875rem',
+    fontSize: 'clamp(0.6rem, 2vw, 0.875rem)',
     textTransform: 'uppercase',
     letterSpacing: '1px',
     color: '#888',
