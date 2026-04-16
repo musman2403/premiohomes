@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import logoImg from '../assets/images/logo.webp';
 import apartments from '../data/apartments';
 import './Header.css';
@@ -20,13 +21,15 @@ export default function Header({ favorites = [] }) {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`} id="header">
       <div className="header-logo">
-        <img src={logoImg} alt="Premio Homes" className="logo-img" width="120" height="40" />
+        <Link to="/">
+          <img src={logoImg} alt="Premio Homes" className="logo-img" width="120" height="40" />
+        </Link>
       </div>
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <a href="#home" className="active" onClick={closeMenu}>Home</a>
-        <a href="#about-us" onClick={closeMenu}>About Us</a>
-        <a href="#gallery" onClick={closeMenu}>Gallery</a>
-        <a href="#contact" onClick={closeMenu}>Contact Us</a>
+        <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/about" onClick={closeMenu}>About Us</NavLink>
+        <NavLink to="/gallery" onClick={closeMenu}>Gallery</NavLink>
+        <NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink>
       </nav>
       <div className="header-actions">
         <div className="profile-wrapper">
