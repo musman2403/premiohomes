@@ -1,21 +1,15 @@
 import { useEffect, useRef } from 'react';
-import heroImg from '../assets/images/hero.webp';
-import studioImg from '../assets/images/studio.webp';
-import twoBedImg from '../assets/images/two-bed.webp';
-import threeBedImg from '../assets/images/three-bed.webp';
-import kitchenImg from '../assets/images/kitchen.webp';
-import bedroomImg from '../assets/images/bedroom.webp';
-import bathroomImg from '../assets/images/bathroom.webp';
+import view1Img from '../assets/images/view1.webp';
+import view2Img from '../assets/images/view2.webp';
+import view3Img from '../assets/images/view3.webp';
+import view4Img from '../assets/images/view4.webp';
 import './Gallery.css';
 
 const images = [
-    { src: heroImg, alt: 'Luxury living room' },
-    { src: kitchenImg, alt: 'Modern kitchen' },
-    { src: bedroomImg, alt: 'Elegant bedroom' },
-    { src: bathroomImg, alt: 'Spa-like bathroom' },
-    { src: studioImg, alt: 'Studio apartment' },
-    { src: twoBedImg, alt: 'Two bedroom view' },
-    { src: threeBedImg, alt: 'Three bedroom space' },
+    { src: view1Img, alt: 'Premio Homes View 1' },
+    { src: view2Img, alt: 'Premio Homes View 2' },
+    { src: view3Img, alt: 'Premio Homes View 3' },
+    { src: view4Img, alt: 'Premio Homes View 4' },
 ];
 
 export default function Gallery() {
