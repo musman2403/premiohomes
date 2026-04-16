@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Timer from './components/Timer';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import useFavorites from './hooks/useFavorites';
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <Router>
+      <Timer />
       <Header favorites={favorites} />
       <main id="main-content">
         <Routes>
