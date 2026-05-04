@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import Spline from '@splinetool/react-spline';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import posterImg from '../assets/images/hero.webp';
 import AnimatedText from './AnimatedText';
