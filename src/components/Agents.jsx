@@ -1,6 +1,7 @@
 import agent1 from '../assets/images/agent1.webp';
 import agent2 from '../assets/images/agent2.webp';
 import agent3 from '../assets/images/agent3.webp';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Agents.css';
 
 const agents = [
@@ -25,14 +26,18 @@ const agents = [
 ];
 
 export default function Agents() {
+    const sectionRef = useScrollReveal();
+
     return (
-        <section className="agents section">
+        <section className="agents section cinema-section" ref={sectionRef}>
             <div className="container">
-                <h2 className="section-title">Meet Our Agents</h2>
-                <p className="agents-subtitle">Our experienced team is here to guide you every step of the way.</p>
+                <div data-cinema="rise">
+                    <h2 className="section-title">Meet Our Agents</h2>
+                    <p className="agents-subtitle">Our experienced team is here to guide you every step of the way.</p>
+                </div>
                 <div className="agents-grid">
-                    {agents.map((agent) => (
-                        <div className="agent-card" key={agent.name}>
+                    {agents.map((agent, i) => (
+                        <div className="agent-card cinema-card" data-cinema="flip" data-cinema-delay={i + 1} key={agent.name}>
                             <div className="agent-avatar">
                                 <img src={agent.img} alt={agent.name} width="300" height="350" loading="lazy" decoding="async" />
                             </div>

@@ -29,6 +29,7 @@ export default function Header({ favorites = [] }) {
         <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
         <NavLink to="/about" onClick={closeMenu}>About Us</NavLink>
         <NavLink to="/gallery" onClick={closeMenu}>Gallery</NavLink>
+        <NavLink to="/pricing" onClick={closeMenu}>Pricing</NavLink>
         <NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink>
       </nav>
       <div className="header-actions">

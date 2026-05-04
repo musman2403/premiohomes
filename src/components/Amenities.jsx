@@ -1,3 +1,4 @@
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Amenities.css';
 
 const amenities = [
@@ -44,11 +45,13 @@ const amenities = [
 ];
 
 export default function Amenities() {
+    const sectionRef = useScrollReveal();
+
     return (
-        <section className="amenities">
+        <section className="amenities" ref={sectionRef}>
             <div className="container">
-                <h2 className="section-title" style={{ textAlign: 'center' }}>Amenities</h2>
-                <div className="amenities-grid">
+                <h2 className="section-title" style={{ textAlign: 'center' }} data-reveal>Amenities</h2>
+                <div className="amenities-grid" data-reveal="slide-up" style={{ transitionDelay: '0.15s' }}>
                     {amenities.map((a) => (
                         <div className="amenity-item" key={a.name}>
                             <div className="amenity-icon">{a.icon}</div>

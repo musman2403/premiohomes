@@ -1,18 +1,64 @@
-# React + Vite
+# Premio Homes - Luxury Real Estate Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Premio Homes is a high-end, cinematic real estate landing page built with modern web technologies. It features a premium design aesthetic, immersive 3D elements, and a transparent investment structure for properties in New Lahore City.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cinematic Hero Section**: Features a high-quality video background with scrollytelling parallax effects.
+- **Investment & Pricing Page**: A dedicated page showcasing flexible 3.5-year payment plans and available property units.
+- **Immersive UI/UX**: Built with Framer Motion for smooth transitions, liquid blobs, and magnetic button interactions.
+- **3 Marla Payment Plan**: Detailed financial breakdown for 3 Marla units, including booking, installments, and possession details.
+- **Property Gallery**: High-resolution showcase of luxury living spaces.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: Vanilla CSS with modern Design Tokens
+- **Icons**: SVG & Custom Iconry
+- **Routing**: [React Router](https://reactrouter.com/)
 
-Note: This will impact Vite dev & build performances.
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/musman2403/premiohomes.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd premiohomes
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🏗️ Project Structure
+
+- `src/components`: Reusable UI components (Hero, PaymentPlan, Apartments, etc.)
+- `src/pages`: Individual page layouts (Home, Pricing, Gallery, About)
+- `src/assets`: Images, videos, and global styles
+- `src/data`: Static content and property information
+
+## 📞 Contact
+
+For more information about Premio Homes, visit our website at [www.premiohomes.com](http://www.premiohomes.com) or reach out via WhatsApp.
+
+---
+
+Built with ❤️ for Premio Homes.

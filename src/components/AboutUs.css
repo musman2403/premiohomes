@@ -271,6 +271,56 @@
     line-height: 1.75;
 }
 
+/* ── Vision / Mission ── */
+.au-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.au-vision-card {
+    padding: 48px 40px;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.au-vision-card:hover {
+    transform: translateY(-6px) translateZ(10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.au-vision-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark, #285450));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.au-vision-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+}
+
+.au-vision-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.75;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
     .au-banner-text {
@@ -309,6 +359,11 @@
     .au-values-grid {
         grid-template-columns: 1fr;
     }
+
+    .au-vision {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -330,5 +385,9 @@
 
     .au-story-text {
         padding: 40px 24px;
+    }
+
+    .au-vision {
+        padding: 40px 20px;
     }
 }

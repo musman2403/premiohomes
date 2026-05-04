@@ -98,12 +98,63 @@
     color: var(--color-primary-light);
 }
 
+.pp-card-breakdown {
+    margin-bottom: 24px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pp-card-highlight .pp-card-breakdown {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pp-breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pp-breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.pp-card-highlight .pp-breakdown-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.item-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+}
+
+.pp-card-highlight .item-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.item-value {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.pp-card-highlight .item-value {
+    color: #fff;
+}
+
 .pp-card-desc {
     font-size: 0.95rem;
     color: var(--color-text-light);
     line-height: 1.6;
     margin-bottom: 24px;
-    min-height: 70px;
 }
 
 .pp-card-highlight .pp-card-desc {

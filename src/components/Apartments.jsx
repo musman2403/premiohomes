@@ -89,7 +89,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
                             </svg>
                         </button>
                         <div className="apt-modal-image">
-                            <img src={selectedApt.img} alt={selectedApt.title} width="800" height="500" />
+                            <img src={selectedApt.img} alt={selectedApt.title} width="800" height="500" loading="lazy" />
                             <span className="apartment-badge">For Sale</span>
                             <span className="apt-modal-price">{selectedApt.price}</span>
                         </div>

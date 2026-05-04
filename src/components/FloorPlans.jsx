@@ -1,3 +1,4 @@
+import useScrollReveal from '../hooks/useScrollReveal';
 import studioImg from '../assets/images/studio.webp';
 import twoBedImg from '../assets/images/two-bed.webp';
 import threeBedImg from '../assets/images/three-bed.webp';
@@ -25,11 +26,18 @@ const plans = [
 ];
 
 export default function FloorPlans() {
+    const sectionRef = useScrollReveal();
+
     return (
-        <section className="floorplans-full" id="floorplans">
+        <section className="floorplans-full" id="floorplans" ref={sectionRef}>
             <div className="floorplans-grid">
-                {plans.map((plan) => (
-                    <div className="floorplan-card" key={plan.title}>
+                {plans.map((plan, i) => (
+                    <div
+                        className="floorplan-card"
+                        key={plan.title}
+                        data-reveal={i === 0 ? 'slide-left' : i === 2 ? 'slide-right' : 'slide-up'}
+                        style={{ transitionDelay: `${i * 0.15}s` }}
+                    >
                         <div className="floorplan-card-bg" style={{ backgroundImage: `url(${plan.img})` }}></div>
                         <div className="floorplan-card-content">
                             <div className="floorplan-card-content-inner">

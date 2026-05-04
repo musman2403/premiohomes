@@ -1,0 +1,131 @@
+/* ===================================================
+   CINEMATIC 3D SCROLL ANIMATIONS
+   Depth, perspective, and parallax utilities
+   =================================================== */
+
+/* ── 3D Section Container ── */
+.cinema-section {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+}
+
+/* ── 3D Reveal: rises from depth ── */
+[data-cinema="rise"] {
+    opacity: 0;
+    transform: translate3d(0, 60px, -80px) rotateX(4deg);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cinema="rise"].revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+
+/* ── 3D Tilt from Left ── */
+[data-cinema="tilt-left"] {
+    opacity: 0;
+    transform: translate3d(-60px, 30px, -40px) rotateY(6deg);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cinema="tilt-left"].revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+}
+
+/* ── 3D Tilt from Right ── */
+[data-cinema="tilt-right"] {
+    opacity: 0;
+    transform: translate3d(60px, 30px, -40px) rotateY(-6deg);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cinema="tilt-right"].revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+}
+
+/* ── 3D Scale from Distance ── */
+[data-cinema="zoom"] {
+    opacity: 0;
+    transform: translate3d(0, 0, -200px) scale(0.85);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cinema="zoom"].revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* ── 3D Flip ── */
+[data-cinema="flip"] {
+    opacity: 0;
+    transform: perspective(800px) rotateX(15deg) translateY(40px);
+    transition: opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cinema="flip"].revealed {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0deg) translateY(0);
+}
+
+/* ── 3D Card hover depth ── */
+.cinema-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.cinema-card:hover {
+    transform: translateY(-8px) translateZ(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Parallax Depth Layers ── */
+.depth-back {
+    transform: translateZ(-100px) scale(1.1);
+}
+
+.depth-mid {
+    transform: translateZ(0px);
+}
+
+.depth-front {
+    transform: translateZ(50px) scale(0.95);
+}
+
+/* ── Cinematic Divider ── */
+.cinema-divider {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--color-border, #e0e0e0) 20%,
+        var(--color-primary, #37736e) 50%,
+        var(--color-border, #e0e0e0) 80%,
+        transparent 100%
+    );
+    margin: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.cinema-divider.revealed {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ── Transition delays for staggered cinema ── */
+[data-cinema-delay="1"] { transition-delay: 0.1s; }
+[data-cinema-delay="2"] { transition-delay: 0.2s; }
+[data-cinema-delay="3"] { transition-delay: 0.3s; }
+[data-cinema-delay="4"] { transition-delay: 0.4s; }
+[data-cinema-delay="5"] { transition-delay: 0.5s; }
+[data-cinema-delay="6"] { transition-delay: 0.6s; }
