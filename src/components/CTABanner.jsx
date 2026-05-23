@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './CTABanner.css';
 
@@ -22,16 +23,12 @@ export default function CTABanner() {
 
           {/* Actions */}
           <div className="cta-banner-actions">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="cta-btn-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
             >
               Schedule a Viewing
-            </a>
+            </Link>
             <a
               href="https://wa.me/923225558812"
               target="_blank"

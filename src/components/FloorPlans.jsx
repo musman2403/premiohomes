@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useScrollReveal from '../hooks/useScrollReveal';
 import studioImg from '../assets/images/studio.webp';
 import twoBedImg from '../assets/images/two-bed.webp';
@@ -58,20 +59,16 @@ export default function FloorPlans() {
               <span className="floorplan-card-eyebrow">{plan.label}</span>
               <h3 className="floorplan-card-title">{plan.title}</h3>
               <p className="floorplan-card-desc">{plan.desc}</p>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="floorplan-card-link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
               >
                 Enquire
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         ))}

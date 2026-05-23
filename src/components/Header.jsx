@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import logoImg from '../assets/images/logo.webp';
 import apartments from '../data/apartments';
 import './Header.css';
 
 export default function Header({ favorites = [] }) {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -49,7 +50,13 @@ export default function Header({ favorites = [] }) {
         {/* Book a Viewing CTA */}
         <button
           className="header-cta"
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => {
+            if (window.location.pathname === '/contact') {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              navigate('/contact');
+            }
+          }}
         >
           Book a Viewing
         </button>

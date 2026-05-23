@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import apartments from '../data/apartments';
 import './Apartments.css';
 
@@ -129,7 +130,7 @@ export default function Apartments({ isFavorite, toggleFavorite }) {
                                 </ul>
                             </div>
                             <div className="apt-modal-actions">
-                                <a href="#contact" className="apt-modal-btn primary" onClick={() => setSelectedApt(null)}>Schedule a Tour</a>
+                                <Link to="/contact" className="apt-modal-btn primary" onClick={() => setSelectedApt(null)}>Schedule a Tour</Link>
                                 <button
                                     className={`apt-modal-btn secondary ${isFavorite(selectedApt.title) ? 'favorited' : ''}`}
                                     onClick={() => toggleFavorite(selectedApt.title)}

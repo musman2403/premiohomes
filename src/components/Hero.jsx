@@ -1,9 +1,11 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import posterImg from '../assets/images/hero.webp';
 import './Hero.css';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -17,8 +19,7 @@ export default function Hero() {
   const scrollToFloorPlans = () =>
     document.getElementById('floorplans')?.scrollIntoView({ behavior: 'smooth' });
 
-  const scrollToContact = () =>
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToContact = () => navigate('/contact');
 
   return (
     <section className="hero" id="home" ref={sectionRef} aria-label="Hero">
