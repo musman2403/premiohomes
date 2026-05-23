@@ -1,6 +1,6 @@
 import PageHero from '../components/PageHero';
 import ScheduleTour from '../components/ScheduleTour';
-import familyImg from '../assets/images/family.webp';
+import contactHeroImg from '../assets/images/contact_hero.png';
 
 export default function ContactPage() {
     return (
@@ -8,7 +8,7 @@ export default function ContactPage() {
             <PageHero
                 title="Contact Us"
                 subtitle="We'd love to hear from you. Reach out to our team for property inquiries, tours, and investment opportunities."
-                backgroundImage={familyImg}
+                backgroundImage={contactHeroImg}
             />
             <ScheduleTour />
         </>
