@@ -1,6 +1,7 @@
 import PageHero from '../components/PageHero';
 import Marquee from '../components/Marquee';
 import AboutUs from '../components/AboutUs';
+import Agents from '../components/Agents';
 import CTABanner from '../components/CTABanner';
 import natureImg from '../assets/images/nature.webp';
 
@@ -18,6 +19,11 @@ export default function AboutUsPage() {
                 speed="slow"
             />
             <AboutUs />
+            <Marquee
+                items={['MEET THE TEAM', 'EXPERIENCED AGENTS', 'PREMIO HOMES']}
+                variant="dark"
+            />
+            <Agents />
             <CTABanner />
         </>
     );

@@ -16,7 +16,7 @@ export default function SelfDrawingLine() {
           y1="0"
           x2="2"
           y2="200"
-          stroke="var(--color-primary)"
+          stroke="var(--color-gold)"
           strokeWidth="4"
           strokeLinecap="round"
           style={{ pathLength: scrollYProgress }}

@@ -20,14 +20,14 @@ export default function Home({ isFavorite, toggleFavorite }) {
     >
       <Hero />
       <Marquee
-        items={['LUXURY LIVING', 'PREMIO HOMES', 'LAHORE', 'SMART INVESTMENT']}
+        items={['Luxury Living', 'Premio Homes', 'New Lahore City', 'Smart Investment']}
         variant="dark"
       />
       <FloorPlans />
       <SelfDrawingLine />
       <Stats />
       <Marquee
-        items={['OUR PROJECTS', 'MODERN DESIGN', 'TRUSTED BUILDER', 'FLEXIBLE PLANS']}
+        items={['Curated Residences', 'Modern Architecture', 'Trusted Excellence', 'Premium Lifestyle']}
         variant="light"
         speed="slow"
       />

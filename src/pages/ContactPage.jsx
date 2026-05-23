@@ -1,7 +1,5 @@
 import PageHero from '../components/PageHero';
-import Agents from '../components/Agents';
 import ScheduleTour from '../components/ScheduleTour';
-import Marquee from '../components/Marquee';
 import familyImg from '../assets/images/family.webp';
 
 export default function ContactPage() {
@@ -13,11 +11,6 @@ export default function ContactPage() {
                 backgroundImage={familyImg}
             />
             <ScheduleTour />
-            <Marquee
-                items={['SCHEDULE A TOUR', 'INVEST WITH CONFIDENCE', 'PREMIO HOMES']}
-                variant="dark"
-            />
-            <Agents />
         </>
     );
 }

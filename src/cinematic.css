@@ -107,7 +107,7 @@
         90deg,
         transparent 0%,
         var(--color-border, #e0e0e0) 20%,
-        var(--color-primary, #37736e) 50%,
+        var(--color-gold, #C9A96E) 50%,
         var(--color-border, #e0e0e0) 80%,
         transparent 100%
     );
