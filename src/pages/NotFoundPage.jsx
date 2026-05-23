@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 export default function NotFoundPage() {
+  useSEO({
+    title: '404 Page Not Found',
+    noindex: true
+  });
+
   return (
     <div style={{ textAlign: 'center', padding: '100px 20px', minHeight: '60vh' }}>
       <h1 style={{ fontSize: '48px', color: 'var(--color-primary, #c8102e)', marginBottom: '20px' }}>404</h1>
