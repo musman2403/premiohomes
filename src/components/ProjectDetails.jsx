@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './ProjectDetails.css';
 
 const details = [
@@ -13,7 +14,7 @@ const details = [
 ];
 
 export default function ProjectDetails() {
-  const sectionRef = useRef(null);
+  const sectionRef = useScrollReveal();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
