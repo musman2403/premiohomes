@@ -1,47 +1,64 @@
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Loader({ onComplete }) {
+const loaderStyle = {
+  position: 'fixed',
+  inset: 0,
+  background: '#F7F3EE',
+  zIndex: 9999,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  gap: '24px',
+  transition: 'opacity 0.6s ease',
+};
+
+const wordmarkStyle = {
+  fontFamily: "'Cormorant Garamond', serif",
+  fontSize: '1.6rem',
+  fontWeight: '400',
+  letterSpacing: '6px',
+  textTransform: 'uppercase',
+  color: '#3D2E22',
+};
+
+const lineContainerStyle = {
+  width: '80px',
+  height: '1px',
+  background: '#E8DDD0',
+  position: 'relative',
+  overflow: 'hidden',
+};
+
+export default function Loader() {
+  const [mounted, setMounted] = useState(true);
+
   useEffect(() => {
-    const timer = setTimeout(onComplete, 2500);
-    return () => clearTimeout(timer);
-  }, [onComplete]);
+    const t = setTimeout(() => setMounted(false), 2200);
+    return () => clearTimeout(t);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <motion.div
-      initial={{ y: 0 }}
-      exit={{ y: '-100%' }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        backgroundColor: '#121226',
-        color: '#fff',
-        zIndex: 9999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column'
-      }}
-    >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-        style={{ fontSize: '2rem', fontFamily: 'Jost', marginBottom: '20px', letterSpacing: '4px' }}
-      >
-        PREMIO HOMES
-      </motion.div>
-      
-      {/* Loading Skeleton Simulation */}
-      <div style={{ width: '200px', height: '2px', background: 'rgba(255,255,255,0.2)', position: 'relative', overflow: 'hidden' }}>
-        <motion.div
-          initial={{ x: '-100%' }}
-          animate={{ x: '100%' }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-          style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '50%', background: 'var(--color-primary)' }}
+    <div style={loaderStyle} aria-label="Loading Premio Homes">
+      <span style={wordmarkStyle}>Premio Homes</span>
+      <div style={lineContainerStyle}>
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: '#C9A96E',
+            animation: 'loaderLine 1.8s ease forwards',
+          }}
         />
       </div>
-    </motion.div>
+      <style>{`
+        @keyframes loaderLine {
+          from { transform: translateX(-100%); }
+          to   { transform: translateX(0); }
+        }
+      `}</style>
+    </div>
   );
 }
