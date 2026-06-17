@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 import Apartments from '../components/Apartments';
 import PaymentPlan from '../components/PaymentPlan';
 import CTABanner from '../components/CTABanner';
-import pricingHeroImg from '../assets/images/hero.webp';
+import pricingHeroImg from '../assets/images/pricing_hero.webp';
 
 export default function PricingPage({ isFavorite, toggleFavorite }) {
     return (

@@ -1,6 +1,6 @@
 import PageHero from '../components/PageHero';
 import Gallery from '../components/Gallery';
-import heroImg from '../assets/images/hero.webp';
+import heroImg from '../assets/images/gallery_hero.webp';
 
 export default function GalleryPage() {
     return (

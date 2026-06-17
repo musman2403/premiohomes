@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero';
 import Marquee from '../components/Marquee';
 import AboutUs from '../components/AboutUs';
 import CTABanner from '../components/CTABanner';
-import natureImg from '../assets/images/nature.webp';
+import natureImg from '../assets/images/about_hero.webp';
 
 export default function AboutUsPage() {
     return (

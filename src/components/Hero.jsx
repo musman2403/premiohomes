@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import posterImg from '../assets/images/hero.webp';
+import posterImg from '../assets/images/fallback.webp';
 import AnimatedText from './AnimatedText';
 import MagneticButton from './MagneticButton';
 import LiquidBlobs from './LiquidBlobs';
