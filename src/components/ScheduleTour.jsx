@@ -1,8 +1,50 @@
+import { useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './ScheduleTour.css';
 
 export default function ScheduleTour() {
     const sectionRef = useScrollReveal();
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        interest: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const { firstName, lastName, email, phone, interest, message } = formData;
+        
+        let interestLabel = '';
+        if (interest === 'studio') interestLabel = 'Studio Apartment';
+        else if (interest === '2bed') interestLabel = 'Two Bedroom';
+        else if (interest === '3bed') interestLabel = 'Three Bedroom';
+        else if (interest === 'investment') interestLabel = 'Investment Opportunity';
+
+        const textMessage = `Hello Premio Homes! I would like to inquire / schedule a tour.
+
+*Name:* ${firstName} ${lastName}
+*Email:* ${email}
+*Phone:* ${phone}
+*Interest:* ${interestLabel || 'Not specified'}
+*Message:* ${message || 'No additional message'}`;
+
+        const encodedText = encodeURIComponent(textMessage);
+        const whatsappUrl = `https://wa.me/923224013397?text=${encodedText}`;
+        
+        window.open(whatsappUrl, '_blank');
+    };
 
     return (
         <section className="contact section cinema-section" id="contact" ref={sectionRef}>
@@ -58,21 +100,60 @@ export default function ScheduleTour() {
 
                     {/* Right: Form */}
                     <div data-cinema="tilt-right" data-cinema-delay="2">
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                        <form className="contact-form" onSubmit={handleSubmit}>
                             <div className="form-row">
-                                <input type="text" placeholder="First Name" />
-                                <input type="text" placeholder="Last name" />
+                                <input 
+                                    type="text" 
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    placeholder="First Name" 
+                                    required
+                                />
+                                <input 
+                                    type="text" 
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    placeholder="Last name" 
+                                    required
+                                />
                             </div>
-                            <input type="email" placeholder="Email" />
-                            <input type="tel" placeholder="Phone Number" />
-                            <select className="contact-select">
+                            <input 
+                                type="email" 
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Email" 
+                                required
+                            />
+                            <input 
+                                type="tel" 
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                placeholder="Phone Number" 
+                                required
+                            />
+                            <select 
+                                name="interest"
+                                value={formData.interest}
+                                onChange={handleChange}
+                                className="contact-select"
+                                required
+                            >
                                 <option value="">I'm interested in...</option>
                                 <option value="studio">Studio Apartment</option>
                                 <option value="2bed">Two Bedroom</option>
                                 <option value="3bed">Three Bedroom</option>
                                 <option value="investment">Investment Opportunity</option>
                             </select>
-                            <textarea placeholder="Your Message"></textarea>
+                            <textarea 
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Your Message"
+                            ></textarea>
                             <button type="submit" className="btn-submit">Schedule a Tour</button>
                         </form>
                     </div>
